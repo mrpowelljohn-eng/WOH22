@@ -29,6 +29,14 @@ h1,h2,h3{font-family:Georgia,"Times New Roman",serif}h1{font-size:clamp(48px,7vw
 .motion-frame{width:min(720px,100%);margin:auto;border:1px solid rgba(214,168,59,.6);border-radius:22px;overflow:hidden;background:#050408;box-shadow:0 22px 60px rgba(0,0,0,.38)}
 .motion-frame video{width:100%;height:auto;display:block;object-fit:contain;background:#050408}
 .motion-copy p{color:#dfd3e6;font-size:18px;max-width:560px}.motion-tags{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}.motion-tags span{border:1px solid rgba(214,168,59,.5);color:var(--gold2);border-radius:999px;padding:7px 11px;font-size:12px;font-weight:900;letter-spacing:.04em}
+
+/* Full-screen video introduction */
+.video-intro{position:relative;width:100%;height:100svh;min-height:100vh;overflow:hidden;background:#050408}
+.video-intro video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#050408}
+.video-intro:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.06) 55%,rgba(0,0,0,.58) 100%);pointer-events:none}
+.enter-site{position:absolute;z-index:3;left:50%;bottom:34px;transform:translateX(-50%);display:inline-flex;align-items:center;justify-content:center;padding:13px 22px;border-radius:999px;border:1px solid var(--gold);background:rgba(16,8,21,.78);color:var(--gold2);font-weight:900;letter-spacing:.04em;backdrop-filter:blur(8px);box-shadow:0 10px 30px rgba(0,0,0,.3)}
+.enter-site:hover{background:var(--gold);color:#211204}
+#siteHome{scroll-margin-top:78px}
 @media(max-width:850px){
  .navlinks{display:none}.brand span{font-size:13px}.brand img{width:45px;height:45px}.give-btn{display:none}.menu-btn{display:inline-flex;width:43px;height:43px;border:1px solid var(--gold);background:transparent;color:#fff;border-radius:10px;align-items:center;justify-content:center;font-size:23px}
  .nav{position:relative}.mobile-menu{position:absolute;top:100%;left:0;right:0;background:#100815;border-bottom:1px solid var(--gold);padding:10px 4vw 18px}.mobile-menu.open{display:grid}.mobile-menu a{padding:12px 6px;border-bottom:1px solid rgba(255,255,255,.08);font-weight:800}
@@ -43,13 +51,13 @@ h1,h2,h3{font-family:Georgia,"Times New Roman",serif}h1{font-size:clamp(48px,7vw
 <div class="mobile-menu" id="mobileMenu"><a onclick="closeMenu()" href="index.html">Home</a><a onclick="closeMenu()" href="about.html">About & Leadership</a><a onclick="closeMenu()" href="fellowship.html">Fellowship</a><a onclick="closeMenu()" href="connect.html">Connect</a><a onclick="closeMenu()" href="connect.html#give">Give</a></div>
 </div></header>
 <main>
-<section class="hero"><div class="wrap hero-grid">
+<section class="video-intro" aria-label="Well of Hope video introduction">
+<video autoplay muted playsinline loop preload="auto" aria-label="Well of Hope Fellowship International introduction"><source src="woh22-showcase.mp4" type="video/mp4">Your browser does not support HTML5 video.</video>
+<a class="enter-site" href="#siteHome">Enter Well of Hope ↓</a>
+</section>
+<section class="hero" id="siteHome"><div class="wrap hero-grid">
 <div class="hero-copy"><div class="kicker">Honor Above All</div><h1>Well of Hope<br>Fellowship International</h1><p>A fellowship centered on faith, leadership, worship and service. Welcome to the online home of Well of Hope Fellowship International.</p><div class="actions"><a class="btn" href="about.html">Discover Our Fellowship</a><a class="btn alt" href="connect.html">Connect With Us</a></div></div>
 <div><img class="hero-logo" src="woh-logo.jpg" alt="Well of Hope Fellowship International"></div>
-</div></section>
-<section class="motion-section" aria-label="Well of Hope motion showcase"><div class="wrap motion-grid">
-<div class="motion-frame"><video autoplay muted playsinline loop preload="metadata" aria-label="Well of Hope Fellowship International logo motion"><source src="woh22-showcase.mp4" type="video/mp4">Your browser does not support HTML5 video.</video></div>
-<div class="motion-copy"><div class="kicker">Well of Hope in Motion</div><h2>Faith. Fellowship. Purpose.</h2><div class="goldline"></div><p>Well of Hope Fellowship International is centered on faith, leadership, worship and service. This motion piece brings the fellowship crest to life while keeping the focus on the ministry and its message.</p><div class="motion-tags"><span>FAITH</span><span>LEADERSHIP</span><span>WORSHIP</span><span>SERVICE</span></div></div>
 </div></section>
 <section class="section light"><div class="wrap"><div class="kicker">Welcome</div><h2>A place of faith, fellowship and purpose.</h2><div class="goldline"></div>
 <div class="grid3"><div class="card"><h3>Our Fellowship</h3><p>Learn about the vision, leadership and foundation of Well of Hope Fellowship International.</p><a href="about.html"><strong>About WOH →</strong></a></div>
