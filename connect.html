@@ -23,6 +23,16 @@ h1,h2,h3{font-family:Georgia,"Times New Roman",serif}h1{font-size:clamp(48px,7vw
 .pagehero{padding:90px 0 60px;background:linear-gradient(135deg,#1d062b,#4c0a73)}.pagehero h1{font-size:clamp(46px,7vw,76px)}
 .notice{border-left:4px solid var(--gold);padding:14px 18px;background:rgba(214,168,59,.09);border-radius:0 12px 12px 0}
 .info{font-size:18px}.give-panel{background:#fff;color:#1d1520;border-radius:22px;padding:30px;border:2px solid var(--gold)}.give-panel strong{color:var(--purple)}
+
+.contact-stage{position:relative;overflow:hidden;background:radial-gradient(circle at 18% 20%,rgba(240,210,123,.18),transparent 28%),radial-gradient(circle at 85% 70%,rgba(109,29,154,.36),transparent 34%),linear-gradient(135deg,#120817,#2b0740 55%,#120817);padding:86px 0}
+.contact-stage:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(to bottom,transparent,#000 20%,#000 80%,transparent)}
+.contact-shell{position:relative;z-index:1;display:grid;grid-template-columns:.82fr 1.18fr;gap:42px;align-items:center}
+.contact-mark{display:flex;align-items:center;justify-content:center;min-height:410px;border:1px solid rgba(214,168,59,.45);border-radius:28px;background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.025));box-shadow:0 25px 70px rgba(0,0,0,.35);padding:42px}
+.contact-mark img{width:min(330px,90%);filter:drop-shadow(0 20px 30px rgba(0,0,0,.45))}
+.contact-copy{padding:10px}.contact-copy h2{font-size:clamp(38px,5vw,62px);line-height:1.02}.contact-copy .lead{font-size:20px;color:#e6dceb;max-width:660px}
+.contact-details{display:grid;gap:13px;margin:28px 0}.contact-item{display:flex;gap:14px;align-items:flex-start;padding:16px 18px;border:1px solid rgba(214,168,59,.32);border-radius:16px;background:rgba(255,255,255,.05)}
+.contact-icon{flex:0 0 42px;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--gold2),var(--gold));color:#211204;font-weight:900}.contact-item strong{display:block;color:var(--gold2);font-size:12px;letter-spacing:.12em;text-transform:uppercase}.contact-item span,.contact-item a{font-size:18px;color:#fff}.contact-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+@media(max-width:850px){.contact-stage{padding:58px 0}.contact-shell{grid-template-columns:1fr;gap:28px}.contact-mark{min-height:280px;padding:28px}.contact-mark img{width:min(260px,75vw)}.contact-copy{text-align:center}.contact-copy .lead{margin-left:auto;margin-right:auto}.contact-item{text-align:left}.contact-actions{justify-content:center}}
 @media(max-width:850px){
  .navlinks{display:none}.brand span{font-size:13px}.brand img{width:45px;height:45px}.give-btn{display:none}.menu-btn{display:inline-flex;width:43px;height:43px;border:1px solid var(--gold);background:transparent;color:#fff;border-radius:10px;align-items:center;justify-content:center;font-size:23px}
  .nav{position:relative}.mobile-menu{position:absolute;top:100%;left:0;right:0;background:#100815;border-bottom:1px solid var(--gold);padding:10px 4vw 18px}.mobile-menu.open{display:grid}.mobile-menu a{padding:12px 6px;border-bottom:1px solid rgba(255,255,255,.08);font-weight:800}
@@ -36,8 +46,18 @@ h1,h2,h3{font-family:Georgia,"Times New Roman",serif}h1{font-size:clamp(48px,7vw
 <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" onclick="toggleMenu()">☰</button>
 <div class="mobile-menu" id="mobileMenu"><a onclick="closeMenu()" href="index.html">Home</a><a onclick="closeMenu()" href="about.html">About & Leadership</a><a onclick="closeMenu()" href="fellowship.html">Fellowship</a><a onclick="closeMenu()" href="connect.html">Connect</a><a onclick="closeMenu()" href="connect.html#give">Give</a></div>
 </div></header>
-<main><section class="pagehero"><div class="wrap"><div class="kicker">Connect With WOH</div><h1>Connect & Give</h1><p>Contact Well of Hope Fellowship International and support the work of the fellowship.</p></div></section>
-<section class="section light"><div class="wrap grid2"><div><div class="kicker">Contact</div><h2>Stay connected.</h2><div class="goldline"></div><p class="info"><strong>Well of Hope Fellowship International</strong><br>Wills Point, Texas</p><p class="info"><strong>Phone:</strong> 817-204-3739<br><strong>Email:</strong> woh22@myyahoo.com</p><p class="small">Additional mailing address, service times, social links and prayer-request information can be added when finalized.</p></div><img class="photo" src="contact-info.jpg" alt="Well of Hope contact information"></div></div></section>
+<main><section class="pagehero"><div class="wrap"><div class="kicker">Connect With WOH</div><h1>Connect & Give</h1><p>Connect with the ministry and support the work of the fellowship.</p></div></section>
+<section class="contact-stage"><div class="wrap contact-shell">
+<div class="contact-mark"><img src="woh-logo.jpg" alt="Well of Hope Fellowship International crest"></div>
+<div class="contact-copy"><div class="kicker">Ministry Contact</div><h2>Greater Rock Hill Baptist Church</h2><div class="goldline"></div><p class="lead">Connect directly with Bishop S.L. Bell and Greater Rock Hill Baptist Church.</p>
+<div class="contact-details">
+<div class="contact-item"><div class="contact-icon">⌖</div><div><strong>Location</strong><span>13643 County Road 4400<br>LaRue, Texas 75770</span></div></div>
+<div class="contact-item"><div class="contact-icon">✦</div><div><strong>Pastor</strong><span>Bishop S.L. Bell</span></div></div>
+<div class="contact-item"><div class="contact-icon">☎</div><div><strong>Phone</strong><a href="tel:+19038764646">(903) 876-4646</a></div></div>
+<div class="contact-item"><div class="contact-icon">@</div><div><strong>Email</strong><a href="mailto:PastorBellSL92@gmail.com">PastorBellSL92@gmail.com</a></div></div>
+</div>
+<div class="contact-actions"><a class="btn" href="tel:+19038764646">Call Church</a><a class="btn alt" href="mailto:PastorBellSL92@gmail.com">Send Email</a></div>
+</div></div></section>
 <section class="section purple" id="give"><div class="wrap grid2"><div><div class="kicker">Ways to Give</div><h2>Support the Fellowship</h2><div class="goldline"></div><p>Current giving information supplied by Well of Hope Fellowship International.</p><div class="give-panel"><p><strong>Zelle</strong><br>WOH22@MYYAHOO.COM</p><p><strong>Cash App</strong><br>$WOH22</p></div></div><img class="photo" src="ways-to-give.png" alt="Ways to give to Well of Hope Fellowship International"></div></section></main>
 <footer class="footer"><div class="wrap"><b>Well of Hope Fellowship International</b><br>Honor Above All • WOH22.com</div></footer>
 <script>
