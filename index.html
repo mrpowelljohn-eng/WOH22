@@ -31,7 +31,7 @@ h1,h2,h3{font-family:Georgia,"Times New Roman",serif}h1{font-size:clamp(48px,7vw
 .motion-copy p{color:#dfd3e6;font-size:18px;max-width:560px}.motion-tags{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}.motion-tags span{border:1px solid rgba(214,168,59,.5);color:var(--gold2);border-radius:999px;padding:7px 11px;font-size:12px;font-weight:900;letter-spacing:.04em}
 
 /* Full-screen video introduction */
-.video-intro{position:relative;width:100%;height:100svh;min-height:100vh;overflow:hidden;background:#050408}
+.video-intro{position:fixed;z-index:1000;inset:0;width:100%;height:100svh;overflow:hidden;background:#050408;transition:opacity .55s ease,visibility .55s ease}.video-intro.exit{opacity:0;visibility:hidden;pointer-events:none}
 .video-intro video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#050408}
 .video-intro:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.06) 55%,rgba(0,0,0,.58) 100%);pointer-events:none}
 .enter-site{position:absolute;z-index:3;left:50%;bottom:34px;transform:translateX(-50%);display:inline-flex;align-items:center;justify-content:center;padding:13px 22px;border-radius:999px;border:1px solid var(--gold);background:rgba(16,8,21,.78);color:var(--gold2);font-weight:900;letter-spacing:.04em;backdrop-filter:blur(8px);box-shadow:0 10px 30px rgba(0,0,0,.3)}
@@ -52,8 +52,8 @@ h1,h2,h3{font-family:Georgia,"Times New Roman",serif}h1{font-size:clamp(48px,7vw
 </div></header>
 <main>
 <section class="video-intro" aria-label="Well of Hope video introduction">
-<video autoplay muted playsinline loop preload="auto" aria-label="Well of Hope Fellowship International introduction"><source src="woh22-showcase.mp4" type="video/mp4">Your browser does not support HTML5 video.</video>
-<a class="enter-site" href="#siteHome">Enter Well of Hope ↓</a>
+<video id="introVideo" autoplay muted playsinline preload="auto" aria-label="Well of Hope Fellowship International introduction"><source src="woh22-showcase.mp4" type="video/mp4">Your browser does not support HTML5 video.</video>
+<button class="enter-site" type="button" onclick="enterSite()">Enter Well of Hope ↓</button>
 </section>
 <section class="hero" id="siteHome"><div class="wrap hero-grid">
 <div class="hero-copy"><div class="kicker">Honor Above All</div><h1>Well of Hope<br>Fellowship International</h1><p>A fellowship centered on faith, leadership, worship and service. Welcome to the online home of Well of Hope Fellowship International.</p><div class="actions"><a class="btn" href="about.html">Discover Our Fellowship</a><a class="btn alt" href="connect.html">Connect With Us</a></div></div>
@@ -67,6 +67,8 @@ h1,h2,h3{font-family:Georgia,"Times New Roman",serif}h1{font-size:clamp(48px,7vw
 </main>
 <footer class="footer"><div class="wrap"><b>Well of Hope Fellowship International</b><br>Honor Above All • WOH22.com</div></footer>
 <script>
+function enterSite(){const intro=document.querySelector('.video-intro');const video=document.getElementById('introVideo');if(video)video.pause();if(intro){intro.classList.add('exit');setTimeout(()=>intro.remove(),600)}window.scrollTo({top:0,behavior:'smooth'})}
+document.addEventListener('DOMContentLoaded',()=>{const v=document.getElementById('introVideo');if(v)v.addEventListener('ended',enterSite,{once:true})});
 function toggleMenu(){const m=document.getElementById('mobileMenu');const b=document.getElementById('menuBtn');const o=m.classList.toggle('open');b.textContent=o?'×':'☰';b.setAttribute('aria-expanded',o?'true':'false')}
 function closeMenu(){const m=document.getElementById('mobileMenu'),b=document.getElementById('menuBtn');if(m&&b){m.classList.remove('open');b.textContent='☰';b.setAttribute('aria-expanded','false')}}
 </script>
